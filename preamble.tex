@@ -1,0 +1,81 @@
+% ==================== PREÁMBULO ====================
+% Archivo para centralizar la configuración de paquetes y estilos del documento.
+
+% ----- IDIOMA Y CODIFICACIÓN -----
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,english]{babel}
+
+% ----- GEOMETRÍA Y TIPOGRAFÍA -----
+\usepackage[letterpaper,margin=2.2cm]{geometry}
+\usepackage{mathptmx} % Fuente tipo Times para formato académico/IEEE
+\usepackage{setspace}
+\setstretch{1.05}
+\usepackage{parskip}
+\usepackage{enumitem}
+\setlist{nosep}
+
+% ----- PAQUETES MATEMÁTICOS -----
+\usepackage{amsmath,amssymb,amsfonts}
+
+% ----- FIGURAS Y GRÁFICOS -----
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{mindmap, positioning, arrows.meta, shapes.geometric}
+
+% ----- TABLAS -----
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{threeparttable}
+\usepackage{longtable}
+
+% ----- BIBLIOGRAFÍA Y REFERENCIAS -----
+\usepackage[numbers]{natbib}
+\usepackage{xurl}      % Permite cortar enlaces largos en varias líneas
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
+  breaklinks=true
+}
+\Urlmuskip=0mu plus 2mu
+
+% ----- CÓDIGO Y COMANDOS -----
+\usepackage{listings}
+\lstdefinestyle{terminal}{
+  basicstyle=\ttfamily\small,
+  frame=single,
+  breaklines=true,
+  columns=fullflexible,
+  backgroundcolor=\color{gray!8},
+  rulecolor=\color{gray!45},
+  xleftmargin=0.5em,
+  xrightmargin=0.5em
+}
+\lstset{style=terminal}
+
+% ----- AJUSTES TIPOGRÁFICOS -----
+\usepackage{etoolbox}
+\hbadness=10000
+\vbadness=10000
+\tolerance=10000
+
+% ----- COMANDOS PROPIOS -----
+\newcommand{\evidencia}[2]{%
+\begin{figure}[H]
+\centering
+\fbox{\begin{minipage}[c][0.18\textheight][c]{0.92\textwidth}
+\centering
+\textbf{#1}\\[0.4em]
+\small Inserte aquí el recorte de pantalla: \texttt{#2}
+\end{minipage}}
+\caption{#1}
+\end{figure}}
